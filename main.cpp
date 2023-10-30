@@ -1,15 +1,13 @@
-# CS2_Lab8
+//Jane McPheron
 
-## Introduction
-Heaps in the STL are simply implemented as vectors of the object you wish to keep in a heap.  In class, we implemented the algorithms necessary to treat a vector of objects as a heap.  But these operations are included directly in C++ as functions from the STL.  I would like you to reimplement my code for testing our heaps, but just using the C++ functions for maintaining a heap.  I briefly described them in class, they are:
+/*
 
-make_heap
-push_heap
-pop_heap
-is_heap
-You can find a general discussion of them from GeeksforGeeksLinks to an external site..  You can find a reference to them starting at this page from cplusplus.comLinks to an external site..  You may have to do a little further reading because the objects to be inserted into the heap are structures where you are comparing based on just one of the fields.
 
-## The Code
+
+*/
+
+
+
 #include <iostream>
 #include <algorithm>
 #include <stdlib.h>
@@ -24,6 +22,7 @@ public:
 int RandInRange(int low, int high) {
     return (low + rand()%(high - low + 1));
 }
+
 int main() {
     srand(time(0));
     int pdata[] = {30, 50, 70, 20, 80, 90, 200, 15, 25, 30};
@@ -76,5 +75,3 @@ int main() {
     }
     return 0;
 }
-## What to Submit
-Submit your solution as a CPP file. Give the file the name AssignmentTypeNumberLastNameFirstName.cpp (so, for example, my submission for Lab 3 would be named Lab3MaclinRichard.cpp). You should also include your first and last name in the file as a comment. Add a long comment in your code showing examples of the results produced from your code.
