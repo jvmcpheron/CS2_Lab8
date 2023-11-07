@@ -1,7 +1,109 @@
 //Jane McPheron
 
 /*
+Max Heap: 200 80 90 25 50 30 70 15 20 30 
+Min Heap: 15 20 70 25 30 90 200 50 30 80 Is this a heap? 1
 
+Heap 1 value at 950 = 9555 does not match 9966
+Heap 2 value at 950 = 9555 does not match 9966
+Heap 1 value at 951 = 9590 does not match 9721
+Heap 2 value at 951 = 9590 does not match 9721
+Heap 1 value at 952 = 9593 does not match 9086
+Heap 2 value at 952 = 9593 does not match 9086
+Heap 1 value at 953 = 9594 does not match 5129
+Heap 2 value at 953 = 9594 does not match 5129
+Heap 1 value at 954 = 9610 does not match 5050
+Heap 2 value at 954 = 9610 does not match 5050
+Heap 1 value at 955 = 9611 does not match 8658
+Heap 2 value at 955 = 9611 does not match 8658
+Heap 1 value at 956 = 9612 does not match 3604
+Heap 2 value at 956 = 9612 does not match 3604
+Heap 1 value at 957 = 9624 does not match 3575
+Heap 2 value at 957 = 9624 does not match 3575
+Heap 1 value at 958 = 9645 does not match 471
+Heap 2 value at 958 = 9645 does not match 471
+Heap 1 value at 959 = 9657 does not match 2893
+Heap 2 value at 959 = 9657 does not match 2893
+Heap 1 value at 960 = 9661 does not match 4260
+Heap 2 value at 960 = 9661 does not match 4260
+Heap 1 value at 961 = 9707 does not match 490
+Heap 2 value at 961 = 9707 does not match 490
+Heap 1 value at 962 = 9708 does not match 8544
+Heap 2 value at 962 = 9708 does not match 8544
+Heap 1 value at 963 = 9721 does not match 4627
+Heap 2 value at 963 = 9721 does not match 4627
+Heap 1 value at 964 = 9721 does not match 2460
+Heap 2 value at 964 = 9721 does not match 2460
+Heap 1 value at 965 = 9737 does not match 2320
+Heap 2 value at 965 = 9737 does not match 2320
+Heap 1 value at 966 = 9741 does not match 7771
+Heap 2 value at 966 = 9741 does not match 7771
+Heap 1 value at 967 = 9752 does not match 393
+Heap 2 value at 967 = 9752 does not match 393
+Heap 1 value at 968 = 9761 does not match 1329
+Heap 2 value at 968 = 9761 does not match 1329
+Heap 1 value at 969 = 9773 does not match 216
+Heap 2 value at 969 = 9773 does not match 216
+Heap 1 value at 970 = 9779 does not match 3329
+Heap 2 value at 970 = 9779 does not match 3329
+Heap 1 value at 971 = 9790 does not match 799
+Heap 2 value at 971 = 9790 does not match 799
+Heap 1 value at 972 = 9792 does not match 5035
+Heap 2 value at 972 = 9792 does not match 5035
+Heap 1 value at 973 = 9802 does not match 5149
+Heap 2 value at 973 = 9802 does not match 5149
+Heap 1 value at 974 = 9806 does not match 9182
+Heap 2 value at 974 = 9806 does not match 9182
+Heap 1 value at 975 = 9815 does not match 8241
+Heap 2 value at 975 = 9815 does not match 8241
+Heap 1 value at 976 = 9816 does not match 1384
+Heap 2 value at 976 = 9816 does not match 1384
+Heap 1 value at 977 = 9819 does not match 1831
+Heap 2 value at 977 = 9819 does not match 1831
+Heap 1 value at 978 = 9821 does not match 7627
+Heap 2 value at 978 = 9821 does not match 7627
+Heap 1 value at 979 = 9822 does not match 1401
+Heap 2 value at 979 = 9822 does not match 1401
+Heap 1 value at 980 = 9822 does not match 9707
+Heap 2 value at 980 = 9822 does not match 9707
+Heap 1 value at 981 = 9834 does not match 8213
+Heap 2 value at 981 = 9834 does not match 8213
+Heap 1 value at 982 = 9839 does not match 3319
+Heap 2 value at 982 = 9839 does not match 3319
+Heap 1 value at 983 = 9846 does not match 3471
+Heap 2 value at 983 = 9846 does not match 3471
+Heap 1 value at 984 = 9852 does not match 9143
+Heap 2 value at 984 = 9852 does not match 9143
+Heap 1 value at 985 = 9870 does not match 3317
+Heap 2 value at 985 = 9870 does not match 3317
+Heap 1 value at 986 = 9884 does not match 2947
+Heap 2 value at 986 = 9884 does not match 2947
+Heap 1 value at 987 = 9891 does not match 1521
+Heap 2 value at 987 = 9891 does not match 1521
+Heap 1 value at 988 = 9911 does not match 6316
+Heap 2 value at 988 = 9911 does not match 6316
+Heap 1 value at 989 = 9917 does not match 5767
+Heap 2 value at 989 = 9917 does not match 5767
+Heap 1 value at 990 = 9941 does not match 225
+Heap 2 value at 990 = 9941 does not match 225
+Heap 1 value at 991 = 9943 does not match 4615
+Heap 2 value at 991 = 9943 does not match 4615
+Heap 1 value at 992 = 9945 does not match 8115
+Heap 2 value at 992 = 9945 does not match 8115
+Heap 1 value at 993 = 9946 does not match 7590
+Heap 2 value at 993 = 9946 does not match 7590
+Heap 1 value at 994 = 9964 does not match 7427
+Heap 2 value at 994 = 9964 does not match 7427
+Heap 1 value at 995 = 9965 does not match 4364
+Heap 2 value at 995 = 9965 does not match 4364
+Heap 1 value at 996 = 9966 does not match 7528
+Heap 2 value at 996 = 9966 does not match 7528
+Heap 1 value at 997 = 9979 does not match 9540
+Heap 2 value at 997 = 9979 does not match 9540
+Heap 1 value at 998 = 9997 does not match 5722
+Heap 2 value at 998 = 9997 does not match 5722
+Heap 1 value at 999 = 10000 does not match 6568
+Heap 2 value at 999 = 10000 does not match 6568
 
 
 */
@@ -11,12 +113,34 @@
 #include <iostream>
 #include <algorithm>
 #include <stdlib.h>
+#include <vector>
+#include <ctime>
 using namespace std;
+
+
+
 
 class HeapData {
 public:
     int priority;
     int theData;
+    
+    //setters
+    void setPriority(int newPri){
+        priority = newPri;
+    }
+    void setData(int newData){
+        theData = newData;
+    }    
+
+    //getters
+    int getPriority(){
+        return priority;
+    }
+    int getData(){
+        return theData;
+    }
+
 };
 
 int RandInRange(int low, int high) {
@@ -31,40 +155,90 @@ int main() {
         hpdata[i].setPriority(pdata[i]);
         hpdata[i].setData(i);
     }
+
+    
     // TODO create initial heap named myHeap with data
     // from hpdata, and a second heap named myHeap2 with
     // the same data but where it is a min heap
 
+    vector<HeapData> myHeap(hpdata, hpdata + 10);
+    vector<HeapData> myHeap2(hpdata, hpdata + 10);
+
+    make_heap(myHeap.begin(), myHeap.end(), [](HeapData& a, HeapData& b) {
+        return a.getPriority() < b.getPriority();
+    });
+
+    make_heap(myHeap2.begin(), myHeap2.end(), [](HeapData& a, HeapData& b) {
+        return a.getPriority() > b.getPriority();
+    });
+
     // TODO show the heap data in myHeap and myHeap2
+    cout << "Max Heap: ";
+    for (auto& item : myHeap) {
+        cout << item.getPriority() << " ";
+    }
+    cout << endl;
+
+    cout << "Min Heap: ";
+    for (auto& item : myHeap2) {
+        cout << item.getPriority() << " ";
+    }
+
 
     const int TESTSIZE = 1000;
     HeapData sdata[TESTSIZE];
     HeapData hdata1[TESTSIZE];
     HeapData hdata2[TESTSIZE];
     // TODO: Create an empty heap named heap1
+    vector<HeapData> heap1;
 
     for (int i = 0; i < TESTSIZE; i++) {
-        sdata[i].setPriority(RandInRange(0,TESTSIZE * 10));
+        sdata[i].setPriority(RandInRange(0, TESTSIZE * 10));
         sdata[i].setData(i);
         // TODO: Insert data item sdata[i] into the heap
 
+        heap1.push_back(sdata[i]);
+        push_heap(heap1.begin(), heap1.end(), [](HeapData& a, HeapData& b) {
+            return a.getPriority() < b.getPriority();
+        });
     }
+
     // TODO: check that heap1 is a heap
+    bool isHeap1 = is_heap(heap1.begin(), heap1.end(), [](HeapData& a, HeapData& b) {
+        return a.getPriority() < b.getPriority();
+    });
+
+    cout << "Is this a heap? " << isHeap1 << endl;
 
     // TODO: create a heap named heap2 from the data in
     //   sdata (read into a vector then make that a
     //   heap)
+    vector<HeapData> heap2(sdata, sdata + TESTSIZE);
+    make_heap(heap2.begin(), heap2.end(), [](HeapData& a, HeapData& b) {
+        return a.getPriority() < b.getPriority();
+    });
 
     for (int i = (TESTSIZE - 1); i >= 0; i--) {
-        hdata1[i] = 
+        hdata1[i] = heap1.front();
         // TODO:  set hdata1[i] to insert top of heap1,
         //  then pop heap1
+
+        pop_heap(heap1.begin(), heap1.end(), [](HeapData& a, HeapData& b) {
+            return a.getPriority() < b.getPriority();
+        });
+        heap1.pop_back();
 
         // TODO: set hdata1[i] to insert top of heap2,
         // then pop heap2
 
+        hdata2[i] = heap2.front();
+        pop_heap(heap2.begin(), heap2.end(), [](HeapData& a, HeapData& b) {
+            return a.getPriority() < b.getPriority();
+        });
+        heap2.pop_back();
+
     }
-    sort(sdata,sdata + TESTSIZE);
+
     for (int i = 0; i < TESTSIZE; i++) {
         if (sdata[i].getPriority() != hdata1[i].getPriority()) {
             cout << "Heap 1 value at " << i << " = " << hdata1[i].getPriority() << " does not match " << sdata[i].getPriority() << "\n";

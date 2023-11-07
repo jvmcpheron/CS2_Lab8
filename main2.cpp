@@ -1,19 +1,24 @@
-# CS2_Lab8
+//Jane McPheron
 
-## Introduction
-Heaps in the STL are simply implemented as vectors of the object you wish to keep in a heap.  In class, we implemented the algorithms necessary to treat a vector of objects as a heap.  But these operations are included directly in C++ as functions from the STL.  I would like you to reimplement my code for testing our heaps, but just using the C++ functions for maintaining a heap.  I briefly described them in class, they are:
+/*
 
-make_heap
-push_heap
-pop_heap
-is_heap
-You can find a general discussion of them from GeeksforGeeksLinks to an external site..  You can find a reference to them starting at this page from cplusplus.comLinks to an external site..  You may have to do a little further reading because the objects to be inserted into the heap are structures where you are comparing based on just one of the fields.
+Max Heap: 200 80 90 25 50 30 70 15 20 30 
+Min Heap: 15 20 70 25 30 90 200 50 30 80 
 
-## The Code
+
+*/
+
+
+
 #include <iostream>
 #include <algorithm>
 #include <stdlib.h>
+#include <vector>
+#include <ctime>
 using namespace std;
+
+
+
 
 class HeapData {
 public:
@@ -50,40 +55,90 @@ int main() {
         hpdata[i].setPriority(pdata[i]);
         hpdata[i].setData(i);
     }
+
+    
     // TODO create initial heap named myHeap with data
     // from hpdata, and a second heap named myHeap2 with
     // the same data but where it is a min heap
 
+    vector<HeapData> myHeap(hpdata, hpdata + 10);
+    vector<HeapData> myHeap2(hpdata, hpdata + 10);
+
+    make_heap(myHeap.begin(), myHeap.end(), [](HeapData& a, HeapData& b) {
+        return a.getPriority() < b.getPriority();
+    });
+
+    make_heap(myHeap2.begin(), myHeap2.end(), [](HeapData& a, HeapData& b) {
+        return a.getPriority() > b.getPriority();
+    });
+
     // TODO show the heap data in myHeap and myHeap2
+    cout << "Max Heap: ";
+    for (auto& item : myHeap) {
+        cout << item.getPriority() << " ";
+    }
+    cout << endl;
+
+    cout << "Min Heap: ";
+    for (auto& item : myHeap2) {
+        cout << item.getPriority() << " ";
+    }
+
 
     const int TESTSIZE = 1000;
     HeapData sdata[TESTSIZE];
     HeapData hdata1[TESTSIZE];
     HeapData hdata2[TESTSIZE];
     // TODO: Create an empty heap named heap1
+    vector<HeapData> heap1;
 
     for (int i = 0; i < TESTSIZE; i++) {
-        sdata[i].setPriority(RandInRange(0,TESTSIZE * 10));
+        sdata[i].setPriority(RandInRange(0, TESTSIZE * 10));
         sdata[i].setData(i);
         // TODO: Insert data item sdata[i] into the heap
 
+        heap1.push_back(sdata[i]);
+        push_heap(heap1.begin(), heap1.end(), [](HeapData& a, HeapData& b) {
+            return a.getPriority() < b.getPriority();
+        });
     }
+
     // TODO: check that heap1 is a heap
+    bool isHeap1 = is_heap(heap1.begin(), heap1.end(), [](HeapData& a, HeapData& b) {
+        return a.getPriority() < b.getPriority();
+    });
+
+    cout << "Is this a heap? " << isHeap1 << endl;
 
     // TODO: create a heap named heap2 from the data in
     //   sdata (read into a vector then make that a
     //   heap)
+    vector<HeapData> heap2(sdata, sdata + TESTSIZE);
+    make_heap(heap2.begin(), heap2.end(), [](HeapData& a, HeapData& b) {
+        return a.getPriority() < b.getPriority();
+    });
 
     for (int i = (TESTSIZE - 1); i >= 0; i--) {
-        // hdata1[i] = 
+        hdata1[i] = heap1.front();
         // TODO:  set hdata1[i] to insert top of heap1,
         //  then pop heap1
+
+        pop_heap(heap1.begin(), heap1.end(), [](HeapData& a, HeapData& b) {
+            return a.getPriority() < b.getPriority();
+        });
+        heap1.pop_back();
 
         // TODO: set hdata1[i] to insert top of heap2,
         // then pop heap2
 
+        hdata2[i] = heap2.front();
+        pop_heap(heap2.begin(), heap2.end(), [](HeapData& a, HeapData& b) {
+            return a.getPriority() < b.getPriority();
+        });
+        heap2.pop_back();
+
     }
-    sort(sdata,sdata + TESTSIZE);
+
     for (int i = 0; i < TESTSIZE; i++) {
         if (sdata[i].getPriority() != hdata1[i].getPriority()) {
             cout << "Heap 1 value at " << i << " = " << hdata1[i].getPriority() << " does not match " << sdata[i].getPriority() << "\n";
@@ -94,5 +149,3 @@ int main() {
     }
     return 0;
 }
-## What to Submit
-Submit your solution as a CPP file. Give the file the name AssignmentTypeNumberLastNameFirstName.cpp (so, for example, my submission for Lab 3 would be named Lab3MaclinRichard.cpp). You should also include your first and last name in the file as a comment. Add a long comment in your code showing examples of the results produced from your code.
